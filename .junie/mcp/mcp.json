@@ -1,10 +1,9 @@
 {
     "mcpServers": {
         "laravel-boost": {
-            "command": "wsl.exe",
+            "command": "./vendor/bin/sail",
             "args": [
-                "/usr/bin/php8.3",
-                "/home/lucas/projects/beer-finder/artisan",
+                "artisan",
                 "boost:mcp"
             ]
         }
