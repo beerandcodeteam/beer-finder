@@ -15,6 +15,7 @@ class Update extends Component
 
     public function mount(Store $store): void
     {
+        $this->authorize('update', $store);
         $this->store = $store;
         $this->form->setStore($store);
     }

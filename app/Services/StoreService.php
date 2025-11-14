@@ -9,7 +9,9 @@ class StoreService
 {
     public function getStores(array $filters, string $sortBy, string $sortDirection): LengthAwarePaginator
     {
-        $query = Store::query()->with(['user']);
+        $query = Store::query()
+            ->with(['user'])
+            ->userScope();
 
         if (isset($filters['name'])) {
             $query->where('name', 'like', '%'.$filters['name'].'%');

@@ -49,6 +49,7 @@ class Index extends Component
 
     public function remove(Store $store): void
     {
+        $this->authorize('delete', $store);
         $store->delete();
         Toaster::info("{$store->name} removida com sucesso!");
     }
